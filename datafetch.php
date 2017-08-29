@@ -1,17 +1,17 @@
 <?php
 print "<script> console.log('Included datafetch.php'); </script>";
 
-$con = mysqli_connect("127.0.0.1","caleb","pass", "db1");
+$con = mysqli_connect("localhost","caleb","pass", "db1");
 
-if (!con) {
+if (!$con) {
   echo "<script>console.log('unable to connect');</script>";
-  die('Could not connect: '. $con->connect_error;
+  die('Could not connect: '. $con->connect_error);
 }
 
 echo "<script>console.log('unable to connect');</script>";
 echo "<script>console.log('connected');</script>";
 echo "<script>console.log('unable to connect');</script>";
-#mysqli_select_db("db1",$con);
+//mysqli_select_db("db1",$con);
 
 $query = "SELECT * FROM pet";
 
@@ -25,7 +25,7 @@ if ($query_res->num_rows > 0) {
 } else {
   echo "0 results";
 }
-#echo "<p>$query_res</p>";
+//echo "<p>$query_res</p>";
 
 $con->close();
 
